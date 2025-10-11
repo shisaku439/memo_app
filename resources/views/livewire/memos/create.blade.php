@@ -8,10 +8,12 @@ state(['title', 'body']);
 // メモを保存する関数
 $store = function () {
     // フォームからの入力値をデータベースへ保存
-    Memo::create([
-        'title' => $this->title,
-        'body' => $this->body,
-    ]);
+    // Memo::create([
+    //     'title' => $this->title,
+    //     'body' => $this->body,
+    // ]);
+    Memo::create($this->all());
+
     // 一覧ページにリダイレクト
     return redirect()->route('memos.index');
 };

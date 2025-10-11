@@ -5,6 +5,9 @@ use App\Models\Memo;
 // ルートモデルバインディング
 state(['memo' => fn(Memo $memo) => $memo]);
 
+$edit = function () {
+    return redirect()->route('memos.edit', $this->memo);
+};
 ?>
 
 <div>
@@ -13,4 +16,5 @@ state(['memo' => fn(Memo $memo) => $memo]);
     {{-- laravelでは、{{}}で自動的にエスケープされる --}}
     {{-- {{!! !!}}でエスケープを無効化 --}}
     <p>{!! nl2br(e($memo->body)) !!}</p>
+    <button wire:click="edit">編集する</button>
 </div>
