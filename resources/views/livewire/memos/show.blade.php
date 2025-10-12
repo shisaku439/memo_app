@@ -18,6 +18,7 @@ $destroy = function () {
 <div>
     <a href="{{ route('memos.index') }}">戻る</a>
     <h1>{{ $memo->title }}</h1>
+    <p><strong>優先度：</strong> {{ $memo->priority_text }}</p>
     {{-- laravelでは、{{}}で自動的にエスケープされる --}}
     {{-- {{!! !!}}でエスケープを無効化 --}}
     <p>{!! nl2br(e($memo->body)) !!}</p>
