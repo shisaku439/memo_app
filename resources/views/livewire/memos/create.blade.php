@@ -3,7 +3,7 @@
 use function Livewire\Volt\{state, rules};
 use App\Models\Memo;
 
-state(['title', 'body', 'priority']);
+state(['title', 'body', 'priority' => 1]);
 
 rules([
     'title' => 'required|string|max:50',
