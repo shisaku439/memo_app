@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Volt::route('/', 'memos.index')->name('home');
+Volt::route('/', 'memos.index')->name('memos.index');
 
 // 一覧ページ
 Volt::route('/memos', 'memos.index')->name('memos.index');
